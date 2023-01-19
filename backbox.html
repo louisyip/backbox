@@ -1,0 +1,54 @@
+ <!DOCTYPE html>
+<html>
+<body>
+	<button onclick="myFunction()">Copy BlackBox</button>
+	<br/>
+	<input type="text" value="No BB" id="myBB">
+	<br/><br/>
+	<div >backBox:</div>
+	<div style="max-width:85%;word-wrap: break-word;" id="txtsesid">test</div>
+	<br/>
+    <!--Begin profiling tags below -->
+	<script type="text/javascript"> 
+		window.io_global_object_name = "IGLOO";
+		window.IGLOO = window.IGLOO || {
+			"enable_flash" : false,
+			"bb_callback": function ( bb, complete ) {
+				document.getElementById('txtsesid').innerHTML=bb;
+				document.getElementById('myBB').value=bb;
+			},
+			"loader" : {
+				"version" : "general5",
+				
+				"subkey" : "Rc9QcVXXOuR3MQuiMdraVcaI_z-hQkHaNDHKXS9OM44"
+				
+			}
+		};
+
+		(function () {
+			var tv = document.createElement('script');
+			tv.type = 'text/javascript';
+			tv.async = true;
+			tv.src = 'https://deweb.transunion.hk/DCPortal/Static/js/iovation.loader.min.js';
+//			tv.src = 'https://172.16.135.242/DCPortal/Static/js/iovation.loader.min.js';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(tv, s);
+	})();
+//End
+
+function myFunction() {
+  /* Get the text field */
+  var copyText = document.getElementById("myBB");
+
+  /* Select the text field */
+  copyText.select();
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+ 
+}
+</script>    
+
+</body>    
+
+</html>
